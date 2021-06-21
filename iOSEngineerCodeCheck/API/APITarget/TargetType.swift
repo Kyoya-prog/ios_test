@@ -13,5 +13,3 @@ extension GitHubAPITargetType {
     var baseURL: URL { URL(string: "https://api.github.com")! }
     var headers: [String: String]? { ["Content-Type": "application/json"] }
 }
-
-
