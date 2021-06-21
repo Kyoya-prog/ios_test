@@ -11,7 +11,7 @@ import UIKit
 class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
 
-    var repository: [Repository] = []
+    var repositories: [Repository] = []
 
     var task: URLSessionTask?
     var word: String = ""
@@ -43,7 +43,7 @@ class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate
                 print(error)
             }
             if let data = data, let fetchedRepos = try? JSONDecoder().decode(SearchRepositories.self, from: data) {
-                self?.repository = fetchedRepos.items
+                self?.repositories = fetchedRepos.items
                 DispatchQueue.main.async {[weak self] in
                     self?.tableView.reloadData()
                 }
@@ -55,20 +55,20 @@ class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail", let index = selectedIndex {
-            let dtl = segue.destination as? DetailRepositoryViewController
-            dtl?.selectedRepository = repository[index]
+            let detailView = segue.destination as? DetailRepositoryViewController
+            detailView?.selectedRepository = repositories[index]
         }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        repository.count
+        repositories.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let rp = repository[indexPath.row]
-        cell.textLabel?.text = rp.fullName
-        cell.detailTextLabel?.text = rp.language
+        let repository = repositories[indexPath.row]
+        cell.textLabel?.text = repository.fullName
+        cell.detailTextLabel?.text = repository.language
         cell.tag = indexPath.row
         return cell
     }

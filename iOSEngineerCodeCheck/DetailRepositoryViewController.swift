@@ -49,7 +49,8 @@ class DetailRepositoryViewController: UIViewController {
                         self?.imageView.image = image
                     }
                 }
-            }.resume()
+            }
+            .resume()
         }
     }
 }
