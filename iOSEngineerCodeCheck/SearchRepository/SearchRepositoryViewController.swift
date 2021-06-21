@@ -54,11 +54,12 @@ class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate
         task?.resume()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // 画面遷移直前に呼ばれる
-        if segue.identifier == "Detail", let index = selectedIndex {
-            let detailView = segue.destination as? DetailRepositoryViewController
-            detailView?.selectedRepository = repositories[index]
+    private func presentDetailRepositoryView(index: Int) {
+        if
+            let index = selectedIndex,
+            let detailView = UIStoryboard(name: "DetailRepository", bundle: nil).instantiateInitialViewController() as? DetailRepositoryViewController {
+            detailView.selectedRepository = repositories[index]
+            navigationController?.pushViewController(detailView, animated: true)
         }
     }
 
@@ -77,6 +78,6 @@ class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-        performSegue(withIdentifier: "Detail", sender: self)
+        presentDetailRepositoryView(index: indexPath.row)
     }
 }
