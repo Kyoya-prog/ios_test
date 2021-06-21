@@ -4,6 +4,8 @@ import Foundation
 
 /// リポジトリ検索View
 protocol SearchRepositoryPresenterOutput: AnyObject {
+    var presenterInput: SearchRepositoryPresenterInput! { get }
+
     /// リポジトリ一覧を更新する
     /// - parameter repositories:リポジトリ一覧
     func updateRepositories(repositories: [Repository])
@@ -15,6 +17,8 @@ protocol SearchRepositoryPresenterOutput: AnyObject {
 
 /// リポジトリ検索Presentation
 protocol SearchRepositoryPresenterInput: AnyObject {
+    var presenterOutput: SearchRepositoryPresenterOutput? { get }
+
     /// 検索ボタンが押された
     /// - parameter text:検索テキスト
     func didTapSearchButton(text: String?)
@@ -28,5 +32,6 @@ protocol SearchRepositoryPresenterInput: AnyObject {
 protocol SearchRepositoryModelInput: AnyObject {
     /// リポジトリを検索する
     /// - parameter keyword:検索キーワード
-    func searchRepositories(keyword: String)
+    /// - parameter completion:kanryouhandora
+    func searchRepositories(keyword: String, completion:@escaping (Result<[Repository], Error>) -> Void)
 }
