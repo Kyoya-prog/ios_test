@@ -17,7 +17,9 @@ protocol SearchRepositoryPresenterOutput: AnyObject {
 
 /// リポジトリ検索Presentation
 protocol SearchRepositoryPresenterInput: AnyObject {
-    var presenterOutput: SearchRepositoryPresenterOutput? { get }
+    var output: SearchRepositoryPresenterOutput? { get }
+
+    var model: SearchRepositoryModel! { get }
 
     /// 検索ボタンが押された
     /// - parameter text:検索テキスト
