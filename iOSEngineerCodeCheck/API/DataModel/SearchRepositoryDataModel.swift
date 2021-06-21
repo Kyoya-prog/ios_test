@@ -9,7 +9,7 @@ struct SearchRepositories: Codable {
 struct Repository: Codable {
     let id: Int
     let fullName: String
-    let language: String
+    let language: String?
     let stargazersCount: Int
     let watchersCount: Int
     let forksCount: Int
