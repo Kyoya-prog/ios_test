@@ -45,12 +45,15 @@ class ViewController2: UIViewController {
         
         let owner = repo.owner
         let imgURL = owner.avatarUrl
-        URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, res, err) in
-            let img = UIImage(data: data!)!
-            DispatchQueue.main.async { [weak self] in
-                self?.ImgView.image = img
-            }
-        }.resume()
+        if let url = URL(string: imgURL){
+            URLSession.shared.dataTask(with: url) { (data, res, err) in
+                if let data = data,let image = UIImage(data: data) {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.ImgView.image = image
+                    }
+                }
+            }.resume()
+        }
         
     }
     

@@ -37,12 +37,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let keyword = searchBar.text,let url = URL(string: "https://api.github.com/search/repositories?q=\(keyword)") else { return }
         
-        word = searchBar.text!
-        
-        if word.count != 0 {
-            url = "https://api.github.com/search/repositories?q=\(word!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { [weak self] (data, res, err) in
+            task = URLSession.shared.dataTask(with: url) { [weak self] (data, res, err) in
                 guard let data = data,err == nil else {
                     print(err!)
                     return
@@ -56,7 +53,6 @@ class ViewController: UITableViewController, UISearchBarDelegate {
             }
         // これ呼ばなきゃリストが更新されません
         task?.resume()
-        }
         
     }
     
