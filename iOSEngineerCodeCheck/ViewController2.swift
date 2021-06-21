@@ -44,6 +44,9 @@ class ViewController2: UIViewController {
         let imgURL = owner.avatarUrl
         if let url = URL(string: imgURL){
             URLSession.shared.dataTask(with: url) { (data, res, err) in
+                if let error = err{
+                    print(error)
+                }
                 if let data = data,let image = UIImage(data: data) {
                     DispatchQueue.main.async { [weak self] in
                         self?.ImgView.image = image
