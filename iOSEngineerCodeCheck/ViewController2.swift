@@ -24,7 +24,7 @@ class ViewController2: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let idx = vc1?.idx, let repo = vc1?.repo[idx] else { return }
+        guard let idx = vc1?.selectedIndex, let repo = vc1?.repository[idx] else { return }
 
         langLbl.text = "Written in \(repo.language)"
         strsLbl.text = "\(repo.stargazersCount) stars"

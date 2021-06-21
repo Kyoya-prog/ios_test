@@ -11,12 +11,12 @@ import UIKit
 class ViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var schBr: UISearchBar!
 
-    var repo: [Repository] = []
+    var repository: [Repository] = []
 
     var task: URLSessionTask?
     var word: String = ""
-    var url: String = ""
-    var idx: Int?
+    var urlString: String = ""
+    var selectedIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
                 print(error)
             }
             if let data = data, let fetchedRepos = try? JSONDecoder().decode(SearchRepositories.self, from: data) {
-                self?.repo = fetchedRepos.items
+                self?.repository = fetchedRepos.items
                 DispatchQueue.main.async {[weak self] in
                     self?.tableView.reloadData()
                 }
@@ -61,12 +61,12 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        repo.count
+        repository.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let rp = repo[indexPath.row]
+        let rp = repository[indexPath.row]
         cell.textLabel?.text = rp.fullName
         cell.detailTextLabel?.text = rp.language
         cell.tag = indexPath.row
@@ -75,7 +75,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 画面遷移時に呼ばれる
-        idx = indexPath.row
+        selectedIndex = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
     }
 }
