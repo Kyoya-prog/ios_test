@@ -12,7 +12,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var SchBr: UISearchBar!
     
-    var repo: [[String: Any]]=[]
+    var repo: [Repository]=[]
     
     var task: URLSessionTask?
     var word: String!
@@ -43,13 +43,12 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         if word.count != 0 {
             url = "https://api.github.com/search/repositories?q=\(word!)"
             task = URLSession.shared.dataTask(with: URL(string: url)!) { [weak self] (data, res, err) in
-                if let obj = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    if let items = obj["items"] as? [[String: Any]] {
-                        self?.repo = items
-                        DispatchQueue.main.async {
-                            self?.tableView.reloadData()
-                        }
-                    }
+                guard let data = data,err == nil else {
+                    print(err!)
+                    return
+                }
+                if let fetchedRepos = try? JSONDecoder().decode(SearchRepositories.self, from: data){
+                    self?.repo = fetchedRepos.items
                 }
             }
         // これ呼ばなきゃリストが更新されません
@@ -75,8 +74,8 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         
         let cell = UITableViewCell()
         let rp = repo[indexPath.row]
-        cell.textLabel?.text = rp["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = rp["language"] as? String ?? ""
+        cell.textLabel?.text = rp.fullName
+        cell.detailTextLabel?.text = rp.language
         cell.tag = indexPath.row
         return cell
         
