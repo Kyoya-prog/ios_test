@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3DE652C626802CFC005396F3 /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652C526802CFC005396F3 /* SearchRepositoryModel.swift */; };
+		3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		3DE652C526802CFC005396F3 /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
+		3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SearchRepositoryContract.swift"; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */,
+				3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */,
 			);
 			path = SearchRepository;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */,
 				BFD945E3244DC5E80012785A /* SearchRepositoryViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailRepositoryViewController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
