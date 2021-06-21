@@ -95,6 +95,7 @@
 		3DE652C92680B655005396F3 /* SearchRepository */ = {
 			isa = PBXGroup;
 			children = (
+				BFD945E4244DC5E80012785A /* SearchRepository.storyboard */,
 				BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */,
 				3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */,
 			);
@@ -104,6 +105,7 @@
 		3DE652CA2680B65E005396F3 /* DetailRepository */ = {
 			isa = PBXGroup;
 			children = (
+				3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */,
 				BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */,
 			);
 			path = DetailRepository;
@@ -137,11 +139,9 @@
 				3DE652C426802CDC005396F3 /* Model */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
-				BFD945E4244DC5E80012785A /* SearchRepository.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
-				3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */,
 			);
 			path = iOSEngineerCodeCheck;
 			sourceTree = "<group>";
