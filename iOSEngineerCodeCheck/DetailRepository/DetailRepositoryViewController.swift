@@ -25,7 +25,7 @@ class DetailRepositoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         guard let repository = selectedRepository else { return }
 
         languageLabel.text = "Written in \(repository.language)"
