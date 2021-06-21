@@ -15,9 +15,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     var repo: [Repository]=[]
     
     var task: URLSessionTask?
-    var word: String!
-    var url: String!
-    var idx: Int!
+    var word: String = ""
+    var url: String = ""
+    var idx: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +37,13 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let keyword = searchBar.text,let url = URL(string: "https://api.github.com/search/repositories?q=\(keyword)") else { return }
         
-        word = searchBar.text!
-        
-        if word.count != 0 {
-            url = "https://api.github.com/search/repositories?q=\(word!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { [weak self] (data, res, err) in
-                guard let data = data,err == nil else {
-                    print(err!)
-                    return
+            task = URLSession.shared.dataTask(with: url) { [weak self] (data, res, err) in
+                if let error = err{
+                    print(error)
                 }
-                if let fetchedRepos = try? JSONDecoder().decode(SearchRepositories.self, from: data){
+                if let data = data,let fetchedRepos = try? JSONDecoder().decode(SearchRepositories.self, from: data){
                     self?.repo = fetchedRepos.items
                     DispatchQueue.main.async {[weak self] in
                         self?.tableView.reloadData()
@@ -56,19 +52,18 @@ class ViewController: UITableViewController, UISearchBarDelegate {
             }
         // これ呼ばなきゃリストが更新されません
         task?.resume()
-        }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Detail"{
-            let dtl = segue.destination as! ViewController2
-            dtl.vc1 = self
+            let dtl = segue.destination as? ViewController2
+            dtl?.vc1 = self
         }
         
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repo.count
     }
