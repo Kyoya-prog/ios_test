@@ -49,6 +49,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
                 }
                 if let fetchedRepos = try? JSONDecoder().decode(SearchRepositories.self, from: data){
                     self?.repo = fetchedRepos.items
+                    DispatchQueue.main.async {[weak self] in
+                        self?.tableView.reloadData()
+                    }
                 }
             }
         // これ呼ばなきゃリストが更新されません
