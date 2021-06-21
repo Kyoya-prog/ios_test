@@ -33,11 +33,11 @@ class SearchRepositoryViewController: UITableViewController, SearchRepositoryPre
     }
 
     func transitionToRepositoryDetail(repository: Repository) {
-        print(repository)
+        presentDetailRepositoryView(repository: repository)
     }
 
-    private func presentDetailRepositoryView(index: Int) {
-        let detailViewController = ModuleAssembler.assembleDetailRepositoryModule(repository: repositories[index])
+    private func presentDetailRepositoryView(repository: Repository) {
+        let detailViewController = ModuleAssembler.assembleDetailRepositoryModule(repository: repository)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
@@ -75,6 +75,6 @@ extension SearchRepositoryViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentDetailRepositoryView(index: indexPath.row)
+        presenterInput.didSelectRepository(repository: repositories[indexPath.row])
     }
 }
