@@ -88,6 +88,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3DE652C92680B655005396F3 /* SearchRepository */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */,
+			);
+			path = SearchRepository;
+			sourceTree = "<group>";
+		};
+		3DE652CA2680B65E005396F3 /* DetailRepository */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */,
+			);
+			path = DetailRepository;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +127,11 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				3DE652CA2680B65E005396F3 /* DetailRepository */,
+				3DE652C92680B655005396F3 /* SearchRepository */,
 				3DE652C426802CDC005396F3 /* Model */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
-				BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */,
-				BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
