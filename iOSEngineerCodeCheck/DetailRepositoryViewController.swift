@@ -20,18 +20,18 @@ class DetailRepositoryViewController: UIViewController {
     @IBOutlet weak var forksCountLabel: UILabel!
     @IBOutlet weak var issuesCountLabel: UILabel!
 
-    var indexViewController: SearchRepositoryViewController?
+    var selectedRepository: Repository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let idx = indexViewController?.selectedIndex, let repo = indexViewController?.repository[idx] else { return }
+        guard let repository = selectedRepository else { return }
 
-        languageLabel.text = "Written in \(repo.language)"
-        starsCountLabel.text = "\(repo.stargazersCount) stars"
-        watchersCountLabel.text = "\(repo.watchersCount) watchers"
-        forksCountLabel.text = "\(repo.forksCount) forks"
-        issuesCountLabel.text = "\(repo.openIssuesCount) open issues"
-        getImage(repository: repo)
+        languageLabel.text = "Written in \(repository.language)"
+        starsCountLabel.text = "\(repository.stargazersCount) stars"
+        watchersCountLabel.text = "\(repository.watchersCount) watchers"
+        forksCountLabel.text = "\(repository.forksCount) forks"
+        issuesCountLabel.text = "\(repository.openIssuesCount) open issues"
+        getImage(repository: repository)
     }
 
     func getImage(repository: Repository) {
