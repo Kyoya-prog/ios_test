@@ -21,29 +21,26 @@ class ViewController2: UIViewController {
     @IBOutlet weak var FrksLbl: UILabel!
     @IBOutlet weak var IsssLbl: UILabel!
     
-    var vc1: ViewController!
+    var vc1: ViewController?
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let repo = vc1.repo[vc1.idx]
+        guard let idx = vc1?.idx,let repo = vc1?.repo[idx] else { return }
         
         LangLbl.text = "Written in \(repo.language)"
         StrsLbl.text = "\(repo.stargazersCount) stars"
         WchsLbl.text = "\(repo.watchersCount) watchers"
         FrksLbl.text = "\(repo.forksCount) forks"
         IsssLbl.text = "\(repo.openIssuesCount) open issues"
-        getImage()
+        getImage(repository: repo)
         
     }
     
-    func getImage(){
+    func getImage(repository:Repository){
         
-        let repo = vc1.repo[vc1.idx]
+        TtlLbl.text = repository.fullName
         
-        TtlLbl.text = repo.fullName
-        
-        let owner = repo.owner
+        let owner = repository.owner
         let imgURL = owner.avatarUrl
         if let url = URL(string: imgURL){
             URLSession.shared.dataTask(with: url) { (data, res, err) in
@@ -54,7 +51,6 @@ class ViewController2: UIViewController {
                 }
             }.resume()
         }
-        
     }
     
 }

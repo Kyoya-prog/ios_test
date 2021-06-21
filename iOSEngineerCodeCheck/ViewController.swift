@@ -15,9 +15,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     var repo: [Repository]=[]
     
     var task: URLSessionTask?
-    var word: String!
-    var url: String!
-    var idx: Int!
+    var word: String = ""
+    var url: String = ""
+    var idx: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
