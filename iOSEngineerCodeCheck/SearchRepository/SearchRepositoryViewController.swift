@@ -17,9 +17,6 @@ class SearchRepositoryViewController: UITableViewController, SearchRepositoryPre
     ///　URLセッションタスク
     var task: URLSessionTask?
 
-    /// 選択されたインデックス番号
-    var selectedIndex: Int?
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,12 +37,8 @@ class SearchRepositoryViewController: UITableViewController, SearchRepositoryPre
     }
 
     private func presentDetailRepositoryView(index: Int) {
-        if
-            let index = selectedIndex,
-            let detailView = UIStoryboard(name: "DetailRepository", bundle: nil).instantiateInitialViewController() as? DetailRepositoryViewController {
-            detailView.selectedRepository = repositories[index]
-            navigationController?.pushViewController(detailView, animated: true)
-        }
+        let detailViewController = ModuleAssembler.assembleDetailRepositoryModule(repository: repositories[index])
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
@@ -82,7 +75,6 @@ extension SearchRepositoryViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
         presentDetailRepositoryView(index: indexPath.row)
     }
 }
