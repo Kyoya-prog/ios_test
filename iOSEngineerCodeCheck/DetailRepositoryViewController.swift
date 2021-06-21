@@ -20,10 +20,12 @@ class DetailRepositoryViewController: UIViewController {
     @IBOutlet weak var forksCountLabel: UILabel!
     @IBOutlet weak var issuesCountLabel: UILabel!
 
+    /// 選択されているリポジトリ
     var selectedRepository: Repository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         guard let repository = selectedRepository else { return }
 
         languageLabel.text = "Written in \(repository.language)"
@@ -50,6 +52,7 @@ class DetailRepositoryViewController: UIViewController {
                     }
                 }
             }
+            // taskを開始する
             .resume()
         }
     }
