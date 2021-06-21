@@ -15,7 +15,6 @@ class APIClient: APIClientInterface {
                 let decoder = JSONDecoder()
                 if let model = try? decoder.decode(T.Response.self, from: response.data) {
                     completion(.success(model))
-                    print(try? response.mapJSON() as Any)
                 } else {
                     completion(.failure(.jsonMapping(response)))
                 }
