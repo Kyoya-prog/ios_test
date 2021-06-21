@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		3DE652D02680BA87005396F3 /* DetailRepository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */; };
 		3DE652D22680BD0D005396F3 /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */; };
 		3DE652D42680BF04005396F3 /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652D32680BF04005396F3 /* SearchRepositoryModel.swift */; };
+		3DE652E02680C1BE005396F3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE652DF2680C1BE005396F3 /* Moya */; };
 		BF0A658D244F2A3B00280FA6 /* DetailRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE652E02680C1BE005396F3 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +189,9 @@
 			dependencies = (
 			);
 			name = iOSEngineerCodeCheck;
+			packageProductDependencies = (
+				3DE652DF2680C1BE005396F3 /* Moya */,
+			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +264,9 @@
 				Base,
 			);
 			mainGroup = BFD945D2244DC5E80012785A;
+			packageReferences = (
+				3DE652DE2680C1BE005396F3 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -660,6 +668,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3DE652DE2680C1BE005396F3 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DE652DF2680C1BE005396F3 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DE652DE2680C1BE005396F3 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFD945D3244DC5E80012785A /* Project object */;
 }
