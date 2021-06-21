@@ -1,7 +1,7 @@
 import Foundation
 import Moya
 
-struct SearchRepositoryTarget: GitHubAPITargetType {
+struct SearchRepositoryTarget: ApiTargetType {
     typealias Response = SearchRepositories
 
     let keyword: String
