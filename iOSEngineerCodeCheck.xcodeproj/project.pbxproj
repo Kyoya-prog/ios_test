@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DE652C626802CFC005396F3 /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652C526802CFC005396F3 /* SearchRepositoryModel.swift */; };
+		3DE652C626802CFC005396F3 /* SearchRepositoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */; };
 		3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */; };
 		3DE652D02680BA87005396F3 /* DetailRepository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */; };
 		3DE652D22680BD0D005396F3 /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */; };
+		3DE652D42680BF04005396F3 /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652D32680BF04005396F3 /* SearchRepositoryModel.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -40,10 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3DE652C526802CFC005396F3 /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
+		3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryDataModel.swift; sourceTree = "<group>"; };
 		3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SearchRepositoryContract.swift"; sourceTree = "<group>"; };
 		3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailRepository.storyboard; sourceTree = "<group>"; };
 		3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
+		3DE652D32680BF04005396F3 /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,12 +88,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3DE652C426802CDC005396F3 /* Model */ = {
+		3DE652C426802CDC005396F3 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				3DE652C526802CFC005396F3 /* SearchRepositoryModel.swift */,
+				3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */,
 			);
-			path = Model;
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		3DE652C92680B655005396F3 /* SearchRepository */ = {
@@ -101,6 +103,7 @@
 				BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */,
 				3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */,
 				3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */,
+				3DE652D32680BF04005396F3 /* SearchRepositoryModel.swift */,
 			);
 			path = SearchRepository;
 			sourceTree = "<group>";
@@ -139,7 +142,7 @@
 			children = (
 				3DE652CA2680B65E005396F3 /* DetailRepository */,
 				3DE652C92680B655005396F3 /* SearchRepository */,
-				3DE652C426802CDC005396F3 /* Model */,
+				3DE652C426802CDC005396F3 /* DataModel */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
@@ -326,7 +329,8 @@
 				3DE652D22680BD0D005396F3 /* SearchRepositoryPresenter.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailRepositoryViewController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
-				3DE652C626802CFC005396F3 /* SearchRepositoryModel.swift in Sources */,
+				3DE652D42680BF04005396F3 /* SearchRepositoryModel.swift in Sources */,
+				3DE652C626802CFC005396F3 /* SearchRepositoryDataModel.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
