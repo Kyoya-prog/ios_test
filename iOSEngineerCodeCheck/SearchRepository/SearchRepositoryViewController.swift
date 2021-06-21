@@ -8,9 +8,10 @@
 
 import UIKit
 
-class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate {
+class SearchRepositoryViewController: UITableViewController, SearchRepositoryPresenterOutput {
     @IBOutlet weak var searchBar: UISearchBar!
 
+    /// 表示するリポジトリ一覧
     var repositories: [Repository] = []
 
     ///　URLセッションタスク
@@ -26,6 +27,30 @@ class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate
         searchBar.delegate = self
     }
 
+    // MARK: SeachRepositoryPresenterOutput
+    var presenterInput: SearchRepositoryPresenterInput!
+
+    func updateRepositories(repositories: [Repository]) {
+        self.repositories = repositories
+        tableView.reloadData()
+    }
+
+    func transitionToRepositoryDetail(repository: Repository) {
+        print(repository)
+    }
+
+    private func presentDetailRepositoryView(index: Int) {
+        if
+            let index = selectedIndex,
+            let detailView = UIStoryboard(name: "DetailRepository", bundle: nil).instantiateInitialViewController() as? DetailRepositoryViewController {
+            detailView.selectedRepository = repositories[index]
+            navigationController?.pushViewController(detailView, animated: true)
+        }
+    }
+}
+
+// MARK: UISearchBarDelegate
+extension SearchRepositoryViewController: UISearchBarDelegate {
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         // 初期のテキストをリセットする
         searchBar.text = ""
@@ -37,32 +62,12 @@ class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let keyword = searchBar.text, let url = URL(string: "https://api.github.com/search/repositories?q=\(keyword)") else { return }
-
-        task = URLSession.shared.dataTask(with: url) { [weak self] data, _, err in
-            if let error = err {
-                print(error)
-            }
-            if let data = data, let fetchedRepos = try? JSONDecoder().decode(SearchRepositories.self, from: data) {
-                self?.repositories = fetchedRepos.items
-                DispatchQueue.main.async {[weak self] in
-                    self?.tableView.reloadData()
-                }
-            }
-        }
-        // taskを開始する
-        task?.resume()
+        presenterInput.didTapSearchButton(text: searchBar.text)
     }
+}
 
-    private func presentDetailRepositoryView(index: Int) {
-        if
-            let index = selectedIndex,
-            let detailView = UIStoryboard(name: "DetailRepository", bundle: nil).instantiateInitialViewController() as? DetailRepositoryViewController {
-            detailView.selectedRepository = repositories[index]
-            navigationController?.pushViewController(detailView, animated: true)
-        }
-    }
-
+// MARK: UITableViewController
+extension SearchRepositoryViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         repositories.count
     }
