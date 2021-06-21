@@ -1,4 +1,4 @@
-struct SearchRepositories: Codable {
+struct Repositories: Codable {
     let items: [Repository]
 
     private enum CodingKeys: String, CodingKey {
