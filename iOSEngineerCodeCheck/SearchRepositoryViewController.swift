@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate {
-    @IBOutlet weak var schBr: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     var repository: [Repository] = []
 
@@ -21,8 +21,8 @@ class SearchRepositoryViewController: UITableViewController, UISearchBarDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        schBr.text = "GitHubのリポジトリを検索できるよー"
-        schBr.delegate = self
+        searchBar.text = "GitHubのリポジトリを検索できるよー"
+        searchBar.delegate = self
     }
 
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
