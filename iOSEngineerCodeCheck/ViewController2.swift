@@ -9,33 +9,33 @@
 import UIKit
 
 class ViewController2: UIViewController {
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
 
-    @IBOutlet weak var ttlLbl: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
 
-    @IBOutlet weak var langLbl: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
 
-    @IBOutlet weak var strsLbl: UILabel!
-    @IBOutlet weak var wchsLbl: UILabel!
-    @IBOutlet weak var frksLbl: UILabel!
-    @IBOutlet weak var isssLbl: UILabel!
+    @IBOutlet weak var starsCountLabel: UILabel!
+    @IBOutlet weak var watchersCountLabel: UILabel!
+    @IBOutlet weak var forksCountLabel: UILabel!
+    @IBOutlet weak var issuesCountLabel: UILabel!
 
-    var vc1: ViewController?
+    var indexViewController: ViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let idx = vc1?.selectedIndex, let repo = vc1?.repository[idx] else { return }
+        guard let idx = indexViewController?.selectedIndex, let repo = indexViewController?.repository[idx] else { return }
 
-        langLbl.text = "Written in \(repo.language)"
-        strsLbl.text = "\(repo.stargazersCount) stars"
-        wchsLbl.text = "\(repo.watchersCount) watchers"
-        frksLbl.text = "\(repo.forksCount) forks"
-        isssLbl.text = "\(repo.openIssuesCount) open issues"
+        languageLabel.text = "Written in \(repo.language)"
+        starsCountLabel.text = "\(repo.stargazersCount) stars"
+        watchersCountLabel.text = "\(repo.watchersCount) watchers"
+        forksCountLabel.text = "\(repo.forksCount) forks"
+        issuesCountLabel.text = "\(repo.openIssuesCount) open issues"
         getImage(repository: repo)
     }
 
     func getImage(repository: Repository) {
-        ttlLbl.text = repository.fullName
+        titleLabel.text = repository.fullName
 
         let owner = repository.owner
         let imgURL = owner.avatarUrl
@@ -46,7 +46,7 @@ class ViewController2: UIViewController {
                 }
                 if let data = data, let image = UIImage(data: data) {
                     DispatchQueue.main.async { [weak self] in
-                        self?.imgView.image = image
+                        self?.imageView.image = image
                     }
                 }
             }.resume()
