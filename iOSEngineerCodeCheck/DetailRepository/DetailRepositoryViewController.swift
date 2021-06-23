@@ -28,11 +28,10 @@ class DetailRepositoryViewController: UIViewController {
 
         setUp()
     }
-    
-    
+
     // MARK: Private
-    
-    private func setUp(){
+
+    private func setUp() {
         guard let repository = selectedRepository else { return }
 
         languageLabel.text = "Written in \(repository.language ?? "")"

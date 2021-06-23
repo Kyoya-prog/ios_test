@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D23281C268354150068825C /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3D23281B268354150068825C /* AlamofireImage */; };
+		3D23281F268358280068825C /* SearchRepositoryResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D23281E268358280068825C /* SearchRepositoryResultCell.swift */; };
+		3D232821268361820068825C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D232820268361820068825C /* UIColorExtension.swift */; };
 		3DE652C626802CFC005396F3 /* SearchRepositoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */; };
 		3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */; };
 		3DE652D02680BA87005396F3 /* DetailRepository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D23281E268358280068825C /* SearchRepositoryResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryResultCell.swift; sourceTree = "<group>"; };
+		3D232820268361820068825C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryDataModel.swift; sourceTree = "<group>"; };
 		3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SearchRepositoryContract.swift"; sourceTree = "<group>"; };
 		3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailRepository.storyboard; sourceTree = "<group>"; };
@@ -102,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D23281D2683580F0068825C /* ViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				3D23281E268358280068825C /* SearchRepositoryResultCell.swift */,
+			);
+			path = ViewComponent;
+			sourceTree = "<group>";
+		};
 		3DE652C426802CDC005396F3 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 		3DE652C92680B655005396F3 /* SearchRepository */ = {
 			isa = PBXGroup;
 			children = (
+				3D23281D2683580F0068825C /* ViewComponent */,
 				BFD945E4244DC5E80012785A /* SearchRepository.storyboard */,
 				BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */,
 				3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */,
@@ -162,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE652ED2680EA75005396F3 /* UIImageViewExtension.swift */,
+				3D232820268361820068825C /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -385,6 +399,8 @@
 			files = (
 				3DE652E82680D403005396F3 /* SearchRepositoryTarget.swift in Sources */,
 				3DE652E62680C2B5005396F3 /* TargetType.swift in Sources */,
+				3D232821268361820068825C /* UIColorExtension.swift in Sources */,
+				3D23281F268358280068825C /* SearchRepositoryResultCell.swift in Sources */,
 				3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */,
 				BFD945E3244DC5E80012785A /* SearchRepositoryViewController.swift in Sources */,
 				3DE652D22680BD0D005396F3 /* SearchRepositoryPresenter.swift in Sources */,
