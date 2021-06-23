@@ -13,7 +13,6 @@
 		3D232823268369710068825C /* DetailRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D232822268369710068825C /* DetailRepositoryView.swift */; };
 		3DE652C626802CFC005396F3 /* SearchRepositoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */; };
 		3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */; };
-		3DE652D02680BA87005396F3 /* DetailRepository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */; };
 		3DE652D22680BD0D005396F3 /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */; };
 		3DE652D42680BF04005396F3 /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652D32680BF04005396F3 /* SearchRepositoryModel.swift */; };
 		3DE652E02680C1BE005396F3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE652DF2680C1BE005396F3 /* Moya */; };
@@ -26,7 +25,6 @@
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
 		BFD945E3244DC5E80012785A /* SearchRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */; };
-		BFD945E6244DC5E80012785A /* SearchRepository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E4244DC5E80012785A /* SearchRepository.storyboard */; };
 		BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E7244DC5EB0012785A /* Assets.xcassets */; };
 		BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */; };
 		BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */; };
@@ -56,7 +54,6 @@
 		3D232822268369710068825C /* DetailRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryView.swift; sourceTree = "<group>"; };
 		3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryDataModel.swift; sourceTree = "<group>"; };
 		3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SearchRepositoryContract.swift"; sourceTree = "<group>"; };
-		3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailRepository.storyboard; sourceTree = "<group>"; };
 		3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
 		3DE652D32680BF04005396F3 /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		3DE652E22680C270005396F3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD945E0244DC5E80012785A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryViewController.swift; sourceTree = "<group>"; };
-		BFD945E5244DC5E80012785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchRepository.storyboard; sourceTree = "<group>"; };
 		BFD945E7244DC5EB0012785A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFD945EA244DC5EB0012785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFD945EC244DC5EB0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				3D23281D2683580F0068825C /* ViewComponent */,
-				BFD945E4244DC5E80012785A /* SearchRepository.storyboard */,
 				BFD945E2244DC5E80012785A /* SearchRepositoryViewController.swift */,
 				3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */,
 				3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */,
@@ -140,7 +135,6 @@
 		3DE652CA2680B65E005396F3 /* DetailRepository */ = {
 			isa = PBXGroup;
 			children = (
-				3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */,
 				BF0A658C244F2A3B00280FA6 /* DetailRepositoryViewController.swift */,
 				3D232822268369710068825C /* DetailRepositoryView.swift */,
 			);
@@ -352,9 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
-				3DE652D02680BA87005396F3 /* DetailRepository.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
-				BFD945E6244DC5E80012785A /* SearchRepository.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,14 +443,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BFD945E4244DC5E80012785A /* SearchRepository.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BFD945E5244DC5E80012785A /* Base */,
-			);
-			name = SearchRepository.storyboard;
-			sourceTree = "<group>";
-		};
 		BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

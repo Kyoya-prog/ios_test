@@ -3,8 +3,7 @@ import UIKit.UIViewController
 
 class ModuleAssembler {
     static func assembleSearchRepositoryModule() -> UIViewController {
-        // swiftlint:disable:next force_cast
-        let viewController = UIStoryboard(name: "SearchRepository", bundle: nil).instantiateInitialViewController() as! SearchRepositoryViewController
+        let viewController = SearchRepositoryViewController()
 
         let model = SearchRepositoryModel()
         let presenter = SearchRepositoryPresenter()
@@ -17,8 +16,7 @@ class ModuleAssembler {
     }
 
     static func assembleDetailRepositoryModule(repository: Repository) -> UIViewController {
-        // swiftlint:disable:next force_cast
-        let viewController = UIStoryboard(name: "DetailRepository", bundle: nil).instantiateInitialViewController() as! DetailRepositoryViewController
+        let viewController = DetailRepositoryViewController()
         viewController.selectedRepository = repository
 
         return viewController
