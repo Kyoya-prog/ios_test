@@ -8,6 +8,7 @@ struct Repositories: Codable {
 
 struct Repository: Codable {
     let id: Int
+    let name: String
     let fullName: String
     let language: String?
     let stargazersCount: Int
@@ -19,6 +20,7 @@ struct Repository: Codable {
 
     private enum CodingKeys: String, CodingKey {
         case id = "id"
+        case name = "name"
         case fullName = "full_name"
         case language = "language"
         case stargazersCount = "stargazers_count"
@@ -30,9 +32,12 @@ struct Repository: Codable {
 }
 
 struct Owner: Codable {
+    let login: String
+
     let avatarUrl: String
 
     private enum CodingKeys: String, CodingKey {
+        case login = "login"
         case avatarUrl = "avatar_url"
     }
 }
