@@ -42,16 +42,7 @@ class DetailRepositoryViewController: UIViewController {
         let owner = repository.owner
         let imageURL = owner.avatarUrl
         if let url = URL(string: imageURL) {
-            ImageLoader(imageURL: url).load { result in
-                switch result {
-                case let .success(image):
-                    DispatchQueue.main.async { [weak self] in
-                        self?.imageView.image = image
-                    }
-                case let .failure(error):
-                    print(error)
-                }
-            }
+            self.imageView.setImage(url: url)
         }
     }
 }
