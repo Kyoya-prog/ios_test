@@ -17,6 +17,7 @@ class SearchRepositoryViewController: UIViewController, SearchRepositoryPresente
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
 
         setUp()
     }
