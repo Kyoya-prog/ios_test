@@ -13,6 +13,9 @@ protocol SearchRepositoryPresenterOutput: AnyObject {
     /// リポジトリ詳細画面に遷移する
     /// - parameter repository:詳細表示するリポジトリ
     func transitionToRepositoryDetail(repository: Repository)
+
+    /// エラーメッセージを表示する
+    func showError(message: String)
 }
 
 /// リポジトリ検索Presentation

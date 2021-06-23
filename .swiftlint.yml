@@ -26,6 +26,10 @@ opt_in_rules:
   - vertical_whitespace_between_cases
   - vertical_whitespace_closing_braces
   - vertical_whitespace_opening_braces
+  
+excluded:
+  # Carthage でインストールしたライブラリは除外
+  - Carthage
 
 force_cast: warning
 

@@ -14,7 +14,7 @@ class SearchRepositoryPresenter: SearchRepositoryPresenterInput {
                 self?.output?.updateRepositories(repositories: repositories)
 
             case let .failure(error):
-                print(error)
+                self?.output?.showError(message: ErrorMessageBuilder.buildErrorMessage(error: error, message: "リポジトリの取得に失敗しました"))
             }
         }
     }

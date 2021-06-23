@@ -35,6 +35,10 @@ class SearchRepositoryViewController: UIViewController, SearchRepositoryPresente
         presentDetailRepositoryView(repository: repository)
     }
 
+    func showError(message: String) {
+        StatusNotification.notifyError(message)
+    }
+
     // MARK: Private
     private func presentDetailRepositoryView(repository: Repository) {
         let detailViewController = ModuleAssembler.assembleDetailRepositoryModule(repository: repository)
