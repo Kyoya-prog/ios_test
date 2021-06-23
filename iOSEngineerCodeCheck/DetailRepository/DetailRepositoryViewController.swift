@@ -26,34 +26,30 @@ class DetailRepositoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUp()
+    }
+    
+    
+    // MARK: Private
+    
+    private func setUp(){
         guard let repository = selectedRepository else { return }
 
-        languageLabel.text = "Written in \(repository.language)"
+        languageLabel.text = "Written in \(repository.language ?? "")"
         starsCountLabel.text = "\(repository.stargazersCount) stars"
         watchersCountLabel.text = "\(repository.watchersCount) watchers"
         forksCountLabel.text = "\(repository.forksCount) forks"
         issuesCountLabel.text = "\(repository.openIssuesCount) open issues"
+        titleLabel.text = repository.fullName
+
         getImage(repository: repository)
     }
 
-    func getImage(repository: Repository) {
-        titleLabel.text = repository.fullName
-
+    private func getImage(repository: Repository) {
         let owner = repository.owner
-        let imgURL = owner.avatarUrl
-        if let url = URL(string: imgURL) {
-            URLSession.shared.dataTask(with: url) { data, _, err in
-                if let error = err {
-                    print(error)
-                }
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async { [weak self] in
-                        self?.imageView.image = image
-                    }
-                }
-            }
-            // taskを開始する
-            .resume()
+        let imageURL = owner.avatarUrl
+        if let url = URL(string: imageURL) {
+            self.imageView.setImage(url: url)
         }
     }
 }
