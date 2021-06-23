@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D23281C268354150068825C /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3D23281B268354150068825C /* AlamofireImage */; };
 		3DE652C626802CFC005396F3 /* SearchRepositoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */; };
 		3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */; };
 		3DE652D02680BA87005396F3 /* DetailRepository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE652CF2680BA87005396F3 /* DetailRepository.storyboard */; };
@@ -80,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE652E02680C1BE005396F3 /* Moya in Frameworks */,
+				3D23281C268354150068825C /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +240,7 @@
 			name = iOSEngineerCodeCheck;
 			packageProductDependencies = (
 				3DE652DF2680C1BE005396F3 /* Moya */,
+				3D23281B268354150068825C /* AlamofireImage */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -313,6 +316,7 @@
 			mainGroup = BFD945D2244DC5E80012785A;
 			packageReferences = (
 				3DE652DE2680C1BE005396F3 /* XCRemoteSwiftPackageReference "Moya" */,
+				3D23281A268354150068825C /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -722,6 +726,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3D23281A268354150068825C /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 		3DE652DE2680C1BE005396F3 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -733,6 +745,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3D23281B268354150068825C /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D23281A268354150068825C /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
 		3DE652DF2680C1BE005396F3 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DE652DE2680C1BE005396F3 /* XCRemoteSwiftPackageReference "Moya" */;
