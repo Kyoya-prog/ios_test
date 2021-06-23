@@ -73,8 +73,8 @@ class DetailRepositoryView: UIView {
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            scrollView.leftAnchor.constraint(equalTo: leftAnchor),
-            scrollView.rightAnchor.constraint(equalTo: rightAnchor),
+            scrollView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
+            scrollView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
 
             vstack.topAnchor.constraint(equalTo: scrollView.topAnchor),
