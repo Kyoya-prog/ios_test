@@ -109,5 +109,6 @@ extension SearchRepositoryViewController: UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenterInput.didSelectRepository(repository: repositories[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
