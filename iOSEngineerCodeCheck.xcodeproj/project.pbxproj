@@ -18,6 +18,7 @@
 		3D7D69A5268388FF00FE6E6F /* NotificationBanner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7D69A0268388FF00FE6E6F /* NotificationBanner.xcframework */; };
 		3D7D69A6268388FF00FE6E6F /* NotificationBanner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7D69A0268388FF00FE6E6F /* NotificationBanner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D7D69AA2683896C00FE6E6F /* StatusNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D69A92683896C00FE6E6F /* StatusNotification.swift */; };
+		3D7D69AC26838A6500FE6E6F /* ErrorMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D69AB26838A6500FE6E6F /* ErrorMessageBuilder.swift */; };
 		3DE652C626802CFC005396F3 /* SearchRepositoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */; };
 		3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */; };
 		3DE652D22680BD0D005396F3 /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */; };
@@ -79,6 +80,7 @@
 		3D7D699F268388FF00FE6E6F /* MarqueeLabel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MarqueeLabel.xcframework; path = Carthage/Build/MarqueeLabel.xcframework; sourceTree = "<group>"; };
 		3D7D69A0268388FF00FE6E6F /* NotificationBanner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NotificationBanner.xcframework; path = Carthage/Build/NotificationBanner.xcframework; sourceTree = "<group>"; };
 		3D7D69A92683896C00FE6E6F /* StatusNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNotification.swift; sourceTree = "<group>"; };
+		3D7D69AB26838A6500FE6E6F /* ErrorMessageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageBuilder.swift; sourceTree = "<group>"; };
 		3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryDataModel.swift; sourceTree = "<group>"; };
 		3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SearchRepositoryContract.swift"; sourceTree = "<group>"; };
 		3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				3D7D69A92683896C00FE6E6F /* StatusNotification.swift */,
+				3D7D69AB26838A6500FE6E6F /* ErrorMessageBuilder.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */,
 				BFD945E3244DC5E80012785A /* SearchRepositoryViewController.swift in Sources */,
 				3DE652D22680BD0D005396F3 /* SearchRepositoryPresenter.swift in Sources */,
+				3D7D69AC26838A6500FE6E6F /* ErrorMessageBuilder.swift in Sources */,
 				3D7D69AA2683896C00FE6E6F /* StatusNotification.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailRepositoryViewController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
