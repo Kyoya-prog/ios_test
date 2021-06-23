@@ -26,6 +26,13 @@ class DetailRepositoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUp()
+    }
+    
+    
+    // MARK: Private
+    
+    private func setUp(){
         guard let repository = selectedRepository else { return }
 
         languageLabel.text = "Written in \(repository.language ?? "")"
@@ -38,7 +45,7 @@ class DetailRepositoryViewController: UIViewController {
         getImage(repository: repository)
     }
 
-    func getImage(repository: Repository) {
+    private func getImage(repository: Repository) {
         let owner = repository.owner
         let imageURL = owner.avatarUrl
         if let url = URL(string: imageURL) {

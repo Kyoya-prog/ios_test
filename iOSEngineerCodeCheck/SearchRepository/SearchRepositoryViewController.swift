@@ -20,8 +20,7 @@ class SearchRepositoryViewController: UITableViewController, SearchRepositoryPre
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchBar.text = "GitHubのリポジトリを検索できるよー"
-        searchBar.delegate = self
+        setUp()
     }
 
     // MARK: SeachRepositoryPresenterOutput
@@ -35,10 +34,16 @@ class SearchRepositoryViewController: UITableViewController, SearchRepositoryPre
     func transitionToRepositoryDetail(repository: Repository) {
         presentDetailRepositoryView(repository: repository)
     }
-
+    
+    // MARK: Private
     private func presentDetailRepositoryView(repository: Repository) {
         let detailViewController = ModuleAssembler.assembleDetailRepositoryModule(repository: repository)
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    private func setUp(){
+        searchBar.text = "ripozitoriwokensaku"
+        searchBar.delegate = self
     }
 }
 
