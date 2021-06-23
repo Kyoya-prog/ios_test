@@ -9,23 +9,11 @@
 import UIKit
 
 class DetailRepositoryViewController: UIViewController {
-    @IBOutlet weak var imageView: UIImageView!
-
-    @IBOutlet weak var titleLabel: UILabel!
-
-    @IBOutlet weak var languageLabel: UILabel!
-
-    @IBOutlet weak var starsCountLabel: UILabel!
-    @IBOutlet weak var watchersCountLabel: UILabel!
-    @IBOutlet weak var forksCountLabel: UILabel!
-    @IBOutlet weak var issuesCountLabel: UILabel!
-
     /// 選択されているリポジトリ
     var selectedRepository: Repository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setUp()
     }
 
@@ -34,21 +22,17 @@ class DetailRepositoryViewController: UIViewController {
     private func setUp() {
         guard let repository = selectedRepository else { return }
 
-        languageLabel.text = "Written in \(repository.language ?? "")"
-        starsCountLabel.text = "\(repository.stargazersCount) stars"
-        watchersCountLabel.text = "\(repository.watchersCount) watchers"
-        forksCountLabel.text = "\(repository.forksCount) forks"
-        issuesCountLabel.text = "\(repository.openIssuesCount) open issues"
-        titleLabel.text = repository.fullName
+        detailView.translatesAutoresizingMaskIntoConstraints = false
+        detailView.repository = repository
+        view.addSubview(detailView)
 
-        getImage(repository: repository)
+        NSLayoutConstraint.activate([
+            detailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            detailView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            detailView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            detailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
 
-    private func getImage(repository: Repository) {
-        let owner = repository.owner
-        let imageURL = owner.avatarUrl
-        if let url = URL(string: imageURL) {
-            self.imageView.setImage(url: url)
-        }
-    }
+    private let detailView = DetailRepositoryView()
 }
