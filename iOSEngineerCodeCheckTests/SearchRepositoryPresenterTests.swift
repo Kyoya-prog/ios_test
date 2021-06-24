@@ -1,41 +1,32 @@
-import XCTest
 @testable import iOSEngineerCodeCheck
+import XCTest
 
-class SearchRepositoryPresenterOutputSpy:SearchRepositoryPresenterOutput{
-    
-    private(set) var countOfInvokingUpdateRepositories = 0
-    private(set) var countOfInvokingTransitionToRepositoryDetail = 0
-    private(set) var countOfInvokingShowError = 0
-    
+class SearchRepositoryPresenterOutputSpy: SearchRepositoryPresenterOutput {
+    private(set) var countOfUpdateRepositoriesAction = 0
+    // swiftlint:disable:next identifier_name
+    private(set) var countOfTransitionToRepositoryDetailAction = 0
+    private(set) var countOfShowErrorAction = 0
+
     var updateRepositoriesAction: (([Repository]) -> Void)?
     var transitionToRepositoryDetailAction: ((Repository) -> Void)?
-    var showErrorAction:((String) -> Void)?
-    
+    var showErrorAction: ((String) -> Void)?
+
     var presenterInput: SearchRepositoryPresenterInput!
-    
+
     func updateRepositories(repositories: [Repository]) {
-        countOfInvokingUpdateRepositories += 1
+        countOfUpdateRepositoriesAction += 1
         updateRepositoriesAction?(repositories)
     }
-    
+
     func transitionToRepositoryDetail(repository: Repository) {
-        countOfInvokingTransitionToRepositoryDetail += 1
+        countOfTransitionToRepositoryDetailAction += 1
         transitionToRepositoryDetailAction?(repository)
     }
-    
+
     func showError(message: String) {
-        countOfInvokingShowError += 1
+        countOfShowErrorAction += 1
         showErrorAction?(message)
     }
-    
-    
 }
 
-class SearchRepositoryModelInputStub:SearchRepositoryModelInput{
-    private var fetchRepositoriesResponce:[Repository] = []
-    
-    func searchRepositories(keyword: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
-        let response:Result<[Repository],Error> = .success(fetchRepositoriesResponce)
-        completion(response)
-    }
-}
+
