@@ -19,6 +19,7 @@
 		3D7D69A6268388FF00FE6E6F /* NotificationBanner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7D69A0268388FF00FE6E6F /* NotificationBanner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D7D69AA2683896C00FE6E6F /* StatusNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D69A92683896C00FE6E6F /* StatusNotification.swift */; };
 		3D7D69AC26838A6500FE6E6F /* ErrorMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D69AB26838A6500FE6E6F /* ErrorMessageBuilder.swift */; };
+		3D7D69AE268497BC00FE6E6F /* SearchRepositoryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D69AD268497BC00FE6E6F /* SearchRepositoryPresenterTests.swift */; };
 		3DE652C626802CFC005396F3 /* SearchRepositoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */; };
 		3DE652CC2680B696005396F3 /*  SearchRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */; };
 		3DE652D22680BD0D005396F3 /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */; };
@@ -81,6 +82,7 @@
 		3D7D69A0268388FF00FE6E6F /* NotificationBanner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NotificationBanner.xcframework; path = Carthage/Build/NotificationBanner.xcframework; sourceTree = "<group>"; };
 		3D7D69A92683896C00FE6E6F /* StatusNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNotification.swift; sourceTree = "<group>"; };
 		3D7D69AB26838A6500FE6E6F /* ErrorMessageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageBuilder.swift; sourceTree = "<group>"; };
+		3D7D69AD268497BC00FE6E6F /* SearchRepositoryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenterTests.swift; sourceTree = "<group>"; };
 		3DE652C526802CFC005396F3 /* SearchRepositoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryDataModel.swift; sourceTree = "<group>"; };
 		3DE652CB2680B696005396F3 /*  SearchRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SearchRepositoryContract.swift"; sourceTree = "<group>"; };
 		3DE652D12680BD0D005396F3 /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */,
 				BFD945F7244DC5EB0012785A /* Info.plist */,
+				3D7D69AD268497BC00FE6E6F /* SearchRepositoryPresenterTests.swift */,
 			);
 			path = iOSEngineerCodeCheckTests;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7D69AE268497BC00FE6E6F /* SearchRepositoryPresenterTests.swift in Sources */,
 				BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
