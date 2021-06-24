@@ -3,7 +3,7 @@ import Foundation
 class SearchRepositoryPresenter: SearchRepositoryPresenterInput {
     var output: SearchRepositoryPresenterOutput?
 
-    var model: SearchRepositoryModel!
+    var model: SearchRepositoryModelInput!
 
     func didTapSearchButton(text: String?) {
         guard let keyword = text else { return }

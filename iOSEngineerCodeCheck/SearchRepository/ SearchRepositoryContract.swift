@@ -22,7 +22,7 @@ protocol SearchRepositoryPresenterOutput: AnyObject {
 protocol SearchRepositoryPresenterInput: AnyObject {
     var output: SearchRepositoryPresenterOutput? { get }
 
-    var model: SearchRepositoryModel! { get }
+    var model: SearchRepositoryModelInput! { get }
 
     /// 検索ボタンが押された
     /// - parameter text:検索テキスト
