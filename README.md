@@ -35,3 +35,31 @@ Issues を確認した上、本プロジェクトを [**Duplicate** してくだ
 | 中途／経験者 | 必須 | 必須 | 選択 |
 
 課題が完成したら、リポジトリーのアドレスを教えてください。
+
+# 使用したライブラリ
+## SPM 
+### HTTP通信
+[Alamofire](https://github.com/Alamofire/Alamofire)
+[Moya](https://github.com/Moya/Moya)
+### 画像通信
+[AlamofireImage](https://github.com/Alamofire/AlamofireImage)
+
+## Carthage
+### バナーメッセージ
+[NotificationBanner](https://github.com/Daltron/NotificationBanner)
+
+# UI
+## リポジトリ検索画面
+
+![Simulator Screen Shot - iPhone 12 Pro - 2021-06-23 at 23 37 17](https://user-images.githubusercontent.com/63186144/123260951-23764780-d531-11eb-86db-cb462ad7f281.png)
+
+## リポジトリ詳細画面
+
+![Simulator Screen Shot - iPhone 12 Pro - 2021-06-23 at 23 37 22](https://user-images.githubusercontent.com/63186144/123260965-2709ce80-d531-11eb-9051-1215beb1c2ad.png)
+
+# 補足事項
+
+アーキテクチャは機能がシンプルと言うこともあり、無駄なコードの複雑化を避けるため、シンプルなMVPアーキテクチャを採用しました。リポジトリ詳細画面については、プレゼンテーションロジックやビジネスロジックはなかったので、Viewのみの構成にしています。
+　ライブラリの管理は、基本は  spmで行い、spm対応していないNottificationBannerとその依存ライブラリについてはCarthageで管理しています。
+UIの開発はstoryboardではなく、コードベースで行いました。
+コード解析ツールに[swiftlint](https://github.com/realm/SwiftLint)を用いています
