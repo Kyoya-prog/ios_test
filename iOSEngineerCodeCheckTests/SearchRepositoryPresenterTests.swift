@@ -30,3 +30,12 @@ class SearchRepositoryPresenterOutputSpy:SearchRepositoryPresenterOutput{
     
     
 }
+
+class SearchRepositoryModelInputStub:SearchRepositoryModelInput{
+    private var fetchRepositoriesResponce:[Repository] = []
+    
+    func searchRepositories(keyword: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
+        let response:Result<[Repository],Error> = .success(fetchRepositoriesResponce)
+        completion(response)
+    }
+}
