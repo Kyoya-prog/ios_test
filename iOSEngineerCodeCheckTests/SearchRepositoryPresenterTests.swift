@@ -29,4 +29,26 @@ class SearchRepositoryPresenterOutputSpy: SearchRepositoryPresenterOutput {
     }
 }
 
+class SearchRepositoryModelInputStub: SearchRepositoryModelInput {
+    private var fetchRepositoriesResponce: [Repository] = []
 
+    private var occuredError: Error?
+
+    func addResponce(result: Result<[Repository], Error>) {
+        switch result {
+        case let .success(repositories):
+            fetchRepositoriesResponce = repositories
+
+        case let .failure(error):
+            occuredError = error
+        }
+    }
+
+    func searchRepositories(keyword: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
+        if let error = occuredError {
+            completion(.failure(error))
+            return
+        }
+        completion(.success(fetchRepositoriesResponce))
+    }
+}
