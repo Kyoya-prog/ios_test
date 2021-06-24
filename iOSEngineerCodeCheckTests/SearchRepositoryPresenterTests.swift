@@ -1,6 +1,7 @@
 @testable import iOSEngineerCodeCheck
 import XCTest
 
+/// Viewへのアクセスを記録するスパイ
 class SearchRepositoryPresenterOutputSpy: SearchRepositoryPresenterOutput {
     private(set) var countOfUpdateRepositoriesAction = 0
     // swiftlint:disable:next identifier_name
@@ -29,6 +30,7 @@ class SearchRepositoryPresenterOutputSpy: SearchRepositoryPresenterOutput {
     }
 }
 
+/// モデルスタブ
 class SearchRepositoryModelInputStub: SearchRepositoryModelInput {
     private var fetchRepositoriesResponce: [Repository] = []
 
@@ -53,63 +55,61 @@ class SearchRepositoryModelInputStub: SearchRepositoryModelInput {
     }
 }
 
-class SearchRepositoryresenterTests: XCTestCase {
+/// SearchRepositoryPresenterのテスト
+class SearchRepositoryPresenterTests: XCTestCase {
     override class func setUp() {
     }
 
     override class func tearDown() {
     }
 
+    ///　リポジトリ検索が成功した時のテスト
     func testSearchActionWhenSuccess() {
-        XCTContext.runActivity(named: "正常な検索時") { _ in
-            let spy = SearchRepositoryPresenterOutputSpy()
-            let stub = SearchRepositoryModelInputStub()
-            let presenter = SearchRepositoryPresenter()
-            presenter.output = spy
-            presenter.model = stub
-            let repositories: [Repository] = [.init(id: 1, name: "superLibrary", fullName: "tanaka/superLibrary", language: "Swift", stargazersCount: 100, watchersCount: 50, forksCount: 50, openIssuesCount: 30, owner: .init(login: "tanaka", avatarUrl: "https://example.com"))]
-            stub.addResponce(result: .success(repositories))
+        let spy = SearchRepositoryPresenterOutputSpy()
+        let stub = SearchRepositoryModelInputStub()
+        let presenter = SearchRepositoryPresenter()
+        presenter.output = spy
+        presenter.model = stub
+        let repositories: [Repository] = [.init(id: 1, name: "superLibrary", fullName: "tanaka/superLibrary", language: "Swift", stargazersCount: 100, watchersCount: 50, forksCount: 50, openIssuesCount: 30, owner: .init(login: "tanaka", avatarUrl: "https://example.com"))]
+        stub.addResponce(result: .success(repositories))
 
-            presenter.didTapSearchButton(text: "search")
+        presenter.didTapSearchButton(text: "search")
 
-            XCTAssertEqual(spy.countOfUpdateRepositoriesAction, 1)
-            XCTAssertEqual(spy.countOfShowErrorAction, 0)
-        }
+        XCTAssertEqual(spy.countOfUpdateRepositoriesAction, 1)
+        XCTAssertEqual(spy.countOfShowErrorAction, 0)
     }
 
+    /// リポジトリ検索が失敗した時のテスト
     func testSearchActionWhenError() {
-        XCTContext.runActivity(named: "検索失敗時") { _ in
-            let spy = SearchRepositoryPresenterOutputSpy()
-            let stub = SearchRepositoryModelInputStub()
-            let presenter = SearchRepositoryPresenter()
-            presenter.output = spy
-            presenter.model = stub
-            let error = NSError()
-            stub.addResponce(result: .failure(error))
+        let spy = SearchRepositoryPresenterOutputSpy()
+        let stub = SearchRepositoryModelInputStub()
+        let presenter = SearchRepositoryPresenter()
+        presenter.output = spy
+        presenter.model = stub
+        let error = NSError()
+        stub.addResponce(result: .failure(error))
 
-            presenter.didTapSearchButton(text: "search")
+        presenter.didTapSearchButton(text: "search")
 
-            XCTAssertEqual(spy.countOfUpdateRepositoriesAction, 0)
-            XCTAssertEqual(spy.countOfShowErrorAction, 1)
-        }
+        XCTAssertEqual(spy.countOfUpdateRepositoriesAction, 0)
+        XCTAssertEqual(spy.countOfShowErrorAction, 1)
     }
 
+    /// リポジトリ一覧でリポジトリのセルをタップした時のテスト
     func testDidSelectRepository() {
-        XCTContext.runActivity(named: "リポジトリセルタップ時") { _ in
-            let spy = SearchRepositoryPresenterOutputSpy()
-            let stub = SearchRepositoryModelInputStub()
-            let presenter = SearchRepositoryPresenter()
-            presenter.output = spy
-            presenter.model = stub
-            let repositories: [Repository] = [.init(id: 1, name: "superLibrary", fullName: "tanaka/superLibrary", language: "Swift", stargazersCount: 100, watchersCount: 50, forksCount: 50, openIssuesCount: 30, owner: .init(login: "tanaka", avatarUrl: "https://example.com"))]
-            stub.addResponce(result: .success(repositories))
+        let spy = SearchRepositoryPresenterOutputSpy()
+        let stub = SearchRepositoryModelInputStub()
+        let presenter = SearchRepositoryPresenter()
+        presenter.output = spy
+        presenter.model = stub
+        let repositories: [Repository] = [.init(id: 1, name: "superLibrary", fullName: "tanaka/superLibrary", language: "Swift", stargazersCount: 100, watchersCount: 50, forksCount: 50, openIssuesCount: 30, owner: .init(login: "tanaka", avatarUrl: "https://example.com"))]
+        stub.addResponce(result: .success(repositories))
 
-            presenter.didTapSearchButton(text: "search")
-            presenter.didSelectRepository(repository: repositories[0])
+        presenter.didTapSearchButton(text: "search")
+        presenter.didSelectRepository(repository: repositories[0])
 
-            XCTAssertEqual(spy.countOfUpdateRepositoriesAction, 1)
-            XCTAssertEqual(spy.countOfShowErrorAction, 0)
-            XCTAssertEqual(spy.countOfTransitionToRepositoryDetailAction, 1)
-        }
+        XCTAssertEqual(spy.countOfUpdateRepositoriesAction, 1)
+        XCTAssertEqual(spy.countOfShowErrorAction, 0)
+        XCTAssertEqual(spy.countOfTransitionToRepositoryDetailAction, 1)
     }
 }
